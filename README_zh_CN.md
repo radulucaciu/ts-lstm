@@ -2,7 +2,7 @@
 ## 介绍
 `lymboy-lstm`包含了几种常用的LSTM模型用于时间序列预测。目前仅支持单变量时间序列预测。
 目前内置的模型有：`LSTM` `BiLSTM` `CNN_LSTM`  `CNN_BiLSTM`
-其他的模型正在研究中...（XNN_BiLSTM_Attention, Encoder-Decoder Model, 多元时间预测支持）尽请期待~
+其他的模型正在研究中...（CNN_BiLSTM_Attention, Encoder-Decoder Model, 多元时间预测支持）尽请期待~
 
 ## 打包方法
 ```shell

@@ -1,9 +1,9 @@
 
-
+[中文文档](./README_zh_CN.md)
 ## Introduce
 `lymboy-lstm` contains several commonly used LSTM models for time series forecasting. Currently only univariate time series forecasting is supported.
 Currently built-in models are: `LSTM` `BiLSTM` `CNN_LSTM` `CNN_BiLSTM`
-Other models are under study... (XNN_BiLSTM_Attention, Encoder-Decoder Model, Multivariate Time Prediction Support) Please look forward to it~
+Other models are under study... (CNN_BiLSTM_Attention, Encoder-Decoder Model, Multivariate Time Prediction Support) Please look forward to it~
 
 ## Packaging method
 
