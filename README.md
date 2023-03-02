@@ -1,5 +1,8 @@
+![](https://img.shields.io/badge/scikit--learn-0.20-brightgreen) ![](https://img.shields.io/badge/tensorflow-2-orange) ![](https://img.shields.io/badge/plotly-5.12-blue)
+![](https://img.shields.io/badge/pandas-1.3-green)
 
 [中文文档](./README_zh_CN.md)
+
 ## Introduce
 `lymboy-lstm` contains several commonly used LSTM models for time series forecasting. Currently only univariate time series forecasting is supported.
 Currently built-in models are: `LSTM` `BiLSTM` `CNN_LSTM` `CNN_BiLSTM`

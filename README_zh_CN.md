@@ -1,3 +1,6 @@
+![](https://img.shields.io/badge/scikit--learn-0.20-brightgreen) ![](https://img.shields.io/badge/tensorflow-2-orange) ![](https://img.shields.io/badge/plotly-5.12-blue)
+![](https://img.shields.io/badge/pandas-1.3-green)
+
 [英文文档](./README.md)
 ## 介绍
 `lymboy-lstm`包含了几种常用的LSTM模型用于时间序列预测。目前仅支持单变量时间序列预测。
