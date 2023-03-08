@@ -1,5 +1,10 @@
-![](https://img.shields.io/badge/scikit--learn-0.20-brightgreen) ![](https://img.shields.io/badge/tensorflow-2-orange) ![](https://img.shields.io/badge/plotly-5.12-blue)
-![](https://img.shields.io/badge/pandas-1.3-green)
+![sklean](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/sklean.svg) ![tf](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/tf.svg) ![plotly](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/plotly.svg) ![pandas](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/pandas.svg) 
+
+# 更新
++ 2023-03-08
+  + 新增`CNN_BiLSTM_Attention`模型
+
+
 
 [英文文档](./README.md)
 ## 介绍

@@ -3,10 +3,10 @@ import time
 
 import keras
 import pandas as pd
-from attention import Attention
 from keras.layers import LSTM, Flatten, TimeDistributed, Bidirectional, Dropout
 from keras.layers.convolutional import Conv1D, MaxPooling1D
 from keras.optimizers import Adam
+from attention import Attention
 
 import lstm.util as util
 
@@ -152,7 +152,7 @@ class BiLSTM(BaseModel):
 
 class CNN_LSTM(BaseModel):
 
-    def __init__(self, n_steps=1, n_output=1, n_seq = None, **kwargs):
+    def __init__(self, n_steps=1, n_output=1, n_seq=None, **kwargs):
         print('构建CNN_LSTM...')
         super().__init__(n_steps=n_steps, n_output=n_output, **kwargs)
 
@@ -172,9 +172,9 @@ class CNN_LSTM(BaseModel):
 
 class CNN_BiLSTM(BaseModel):
 
-    def __init__(self, n_steps=1, n_output=1, n_seq = None, **kwargs):
+    def __init__(self, n_steps=1, n_output=1, n_seq=None, **kwargs):
         print('构建CNN_BiLSTM...')
-        super().__init__(n_steps=n_steps, n_output=n_output, **kwargs)
+        super().__init__(n_steps=n_steps, n_output=n_output, n_seq=None, **kwargs)
 
     def build_model(self, layer_size=16, learning_rate=3e-3, n_steps=4,
                     filters=64, kernel_size=1, pool_size=2, dropout=0.1, **kwargs):
@@ -192,3 +192,26 @@ class CNN_BiLSTM(BaseModel):
         return cnn_bilstm
 
 
+class CNN_BiLSTM_Attention(BaseModel):
+
+    def __init__(self, n_steps=1, n_output=1, n_seq=None, **kwargs):
+        print('构建AC_LSTM...')
+        super().__init__(n_steps=n_steps, n_output=n_output, n_seq=n_seq, **kwargs)
+
+    def build_model(self, hidden_layers=1, layer_size=16, learning_rate=3e-3, n_steps=4,
+                    filters=64, kernel_size=1, pool_size=2, dropout=0.1, **kwargs):
+        ac_lstm = keras.models.Sequential()
+        ac_lstm.add(TimeDistributed(Conv1D(filters=filters, kernel_size=kernel_size, activation='relu'),
+                                    input_shape=(None, int(self.n_steps / self.n_seq), self.n_features)))
+        ac_lstm.add(TimeDistributed(MaxPooling1D(pool_size=pool_size)))
+        ac_lstm.add(TimeDistributed(Flatten()))
+        ac_lstm.add(Bidirectional(keras.layers.LSTM(layer_size, activation='relu', return_sequences=True)))
+        ac_lstm.add(Dropout(dropout))
+        for _ in range(hidden_layers - 1):
+            ac_lstm.add(Bidirectional(keras.layers.LSTM(layer_size, activation='relu', return_sequences=True)))
+            ac_lstm.add(Dropout(dropout))
+        ac_lstm.add(Attention(units=layer_size * 2))
+        ac_lstm.add(keras.layers.Dense(self.n_output))
+        optimizer = keras.optimizers.Adam(learning_rate)
+        ac_lstm.compile(optimizer=optimizer, loss='mse')
+        return ac_lstm
