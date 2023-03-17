@@ -1,6 +1,8 @@
 ![sklean](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/sklean.svg) ![tf](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/tf.svg) ![plotly](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/plotly.svg) ![pandas](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/pandas.svg) 
 
 # 更新
++ 2023-03-16
+  + 支持多变量时间序列预测任务
 + 2023-03-08
   + 新增`CNN_BiLSTM_Attention`模型
 
@@ -9,8 +11,8 @@
 [英文文档](./README.md)
 ## 介绍
 `lymboy-lstm`包含了几种常用的LSTM模型用于时间序列预测。目前仅支持单变量时间序列预测。
-目前内置的模型有：`LSTM` `BiLSTM` `CNN_LSTM`  `CNN_BiLSTM`
-其他的模型正在研究中...（CNN_BiLSTM_Attention, Encoder-Decoder Model, 多元时间预测支持）尽请期待~
+目前内置的模型有：`LSTM` `BiLSTM` `CNN_LSTM`  `CNN_BiLSTM` `CNN_BiLSTM_Attention`
+其他的模型正在研究中...(<del>CNN_BiLSTM_Attention</del>, Encoder-Decoder Model, <del>多元时间预测支持</del>)尽请期待~
 
 ## 打包方法
 ```shell
@@ -81,6 +83,16 @@ print(model.score())
 ```
 
 ![cnnbilstm-predict-96to24-plot](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/cnnbilstm-predict-96to24-plot.png)
+
+
+
+
+
+
+
+![](images/image-20230317150220173.png)
+
+
 
 ## 参数说明
 

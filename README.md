@@ -1,6 +1,8 @@
 ![sklean](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/sklean.svg) ![tf](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/tf.svg) ![plotly](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/plotly.svg) ![pandas](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/pandas.svg) 
 
 # Updates
++ 2023-03-16
+  + Support multivariate time forcast
 + 2023-03-08
   + Add`CNN_BiLSTM_Attention`model
 
@@ -9,8 +11,8 @@
 
 ## Introduce
 `lymboy-lstm` contains several commonly used LSTM models for time series forecasting. Currently only univariate time series forecasting is supported.
-Currently built-in models are: `LSTM` `BiLSTM` `CNN_LSTM` `CNN_BiLSTM`
-Other models are under study... (CNN_BiLSTM_Attention, Encoder-Decoder Model, Multivariate Time Prediction Support) Please look forward to it~
+Currently built-in models are: `LSTM` `BiLSTM` `CNN_LSTM` `CNN_BiLSTM` `CNN_BiLSTM_Attention`
+Other models are under study... (<del>CNN_BiLSTM_Attention</del>, Encoder-Decoder Model, <del>Multivariate Time Prediction Support</del>) Please look forward to it~
 
 ## Packaging method
 

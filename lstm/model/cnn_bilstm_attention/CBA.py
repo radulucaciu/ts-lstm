@@ -56,9 +56,9 @@ def attention_3d_block2(inputs, single_attention_vector=False):
 
 
 def create_dataset(dataset, look_back):
-    '''
+    """
     Processing the data
-    '''
+    """
     dataX, dataY = [], []
     for i in range(len(dataset) - look_back - 1):
         a = dataset[i:(i + look_back), :]

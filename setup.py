@@ -1,5 +1,6 @@
-from setuptools import setup, find_packages
 import os
+
+from setuptools import setup, find_packages
 
 DESCRIPTION = "Some out-of-the-box lstm-based time series models"
 if os.path.exists('README.md'):
@@ -9,7 +10,7 @@ else:
     LONG_DESCRIPTION = DESCRIPTION
 
 setup(name='lymboy-lstm',
-      version='v1.6',
+      version='v1.7.1',
       description=DESCRIPTION,
       long_description=LONG_DESCRIPTION,
       long_description_content_type="text/markdown",
@@ -20,9 +21,10 @@ setup(name='lymboy-lstm',
       packages=find_packages(),
       include_package_data=True,
       install_requires=[
-          'keras',
           'scikit-learn',
-          'plotly'
+          'plotly',
+          'keras~=2.11.0',
+          'attention~=4.1'
       ],
 
       zip_safe=True)
