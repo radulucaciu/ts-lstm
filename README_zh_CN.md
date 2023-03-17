@@ -84,13 +84,9 @@ print(model.score())
 
 ![cnnbilstm-predict-96to24-plot](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/cnnbilstm-predict-96to24-plot.png)
 
+LSTM模型在多个数据集上的预测结果（多元，多步预测）
 
-
-
-
-
-
-![](images/image-20230317150220173.png)
+![](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/17/image-20230317150220173.png)
 
 
 
@@ -99,6 +95,7 @@ print(model.score())
 + n_steps: 训练步长，表示历史数据的步长，int
 + n_output：预测输出长度，int
 + n_seq：子序列，int (注意，n_seq应能被n_steps整除，最小为1)
++ learning_rate：学习率
 
 其他参数与`tensorflow`一致
 

@@ -88,11 +88,19 @@ print(model.score())
 
 ![cnnbilstm-predict-96to24-plot](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/02/cnnbilstm-predict-96to24-plot.png)
 
+
+Prediction results of LSTM model on multiple data sets (multivariate, multi-step prediction)
+
+![](https://itbird.oss-cn-beijing.aliyuncs.com/img/2023/03/17/image-20230317150220173.png)
+
+
+
 ## Parameter Description
 
 + n_steps: training step size, representing the step size of historical data, int
 + n_output: predicted output length, int
 + n_seq: subsequence, int (note that n_seq should be divisible by n_steps, the minimum is 1)
++ learning_rate: learning rate for Adm, float
 
 Other parameters are consistent with `tensorflow`
 
