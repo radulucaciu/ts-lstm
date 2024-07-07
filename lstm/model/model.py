@@ -7,7 +7,7 @@ import numpy as np
 from sklearn.utils import check_array
 from sklearn.preprocessing import StandardScaler
 from keras.layers import LSTM, Flatten, TimeDistributed, Bidirectional, Dropout
-from keras.layers.convolutional import Conv1D, MaxPooling1D
+from keras.layers import Conv1D, MaxPooling1D
 from keras.optimizers import Adam
 from attention import Attention
 from lstm.metric import r2_keras
